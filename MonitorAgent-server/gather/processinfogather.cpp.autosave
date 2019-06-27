@@ -1,0 +1,25 @@
+#include "processinfogather.h"
+
+#include 
+
+ProcessInfoGather::ProcessInfoGather(QObject *parent) : QObject(parent)
+{
+
+}
+
+//获取进程数量
+int ProcessInfoGather::getProcessNum()
+{
+    QDir dir("/proc");
+    if(!dir.exists()){
+         return -1;
+    }
+    int num = 0;
+    dir.setFilter(QDir::Dirs);
+    QStringList list = dir.entryList();
+    for(QString& c : list){
+        if(c.toUInt()>0)
+            ++num;
+    }
+    return num;
+}
