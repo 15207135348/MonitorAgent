@@ -1,5 +1,5 @@
 # MonitorAgent
-云平台主动防御系统（客户端部分）
+Linux下CPU/内存/磁盘/网络监测软件(与异常检测服务端Monitor-Server配合使用更佳)
 
 包括3种不同的实现方式：
 
